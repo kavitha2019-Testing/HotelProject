@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Com.UtilitiesPackage.ExtentFile"/>
+  </listeners>
+  <test thread-count="5" name="C:/Users/kavitha/IdeaProjects/HotelProject(failed)">
+    <classes>
+      <class name="Com.TestPackage.HomePageTest">
+        <methods>
+          <include name="Lbrowser"/>
+          <include name="stext"/>
+        </methods>
+      </class> <!-- Com.TestPackage.HomePageTest -->
+    </classes>
+  </test> <!-- C:/Users/kavitha/IdeaProjects/HotelProject(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
