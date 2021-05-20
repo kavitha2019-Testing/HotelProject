@@ -64,27 +64,7 @@ public class HomePageTest  extends OpenBrowser {
         // DM.Diemen(E); // dimensions of webelement using selenium4
         E.click();
         System.out.println("Entered checkIN section");
-        String INmonth = HP.Indatesel();
-        //Wc.fluwait(E);  // fluent wait used but not working
-        WebElement next;
-        while ((!INmonth.contains(prop.getProperty("CheckInM")))) {
-            next = HP.clickIndateselect();
-            next.click();
-            Thread.sleep(2000);
-            INmonth = HP.Indatesel();
-        }//
-
-
-
-        List<WebElement> e =  HP.selectIndate();
-        for (WebElement num : e) {
-            if (num.getText().contains(prop.getProperty("CheckInDate"))) {
-                num.click();
-                Thread.sleep(2000);
-                System.out.println(" checkIn date is:" + num.getText());
-                break;
-            }
-        }
+        CheckInDate();
         // SI.Image4web("webelemimage");// using selenuium 4
         Thread.sleep(2000);
         // SI.Image4(E,"checkIn");  // using seleium4
@@ -145,6 +125,27 @@ public class HomePageTest  extends OpenBrowser {
                 HP.clickSearch();
                 Thread.sleep(2000);
 
+            }
+        }
+    }
+
+    private void CheckInDate() throws InterruptedException {
+        String INmonth = HP.Indatesel();
+        //Wc.fluwait(E);  // fluent wait used but not working
+        WebElement next;
+        while ((!INmonth.contains(prop.getProperty("CheckInM")))) {
+            next = HP.clickIndateselect();
+            next.click();
+            Thread.sleep(2000);
+            INmonth = HP.Indatesel();
+        }//
+        List<WebElement> e =  HP.selectIndate();
+        for (WebElement num : e) {
+            if (num.getText().contains(prop.getProperty("CheckInDate"))) {
+                num.click();
+                Thread.sleep(2000);
+                System.out.println(" checkIn date is:" + num.getText());
+                break;
             }
         }
     }
