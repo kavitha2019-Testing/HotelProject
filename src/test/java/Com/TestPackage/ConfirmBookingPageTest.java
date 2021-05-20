@@ -16,16 +16,17 @@ import java.io.IOException;
 public class ConfirmBookingPageTest  extends OpenBrowser {
     JavaScriptconcepts JS = new JavaScriptconcepts();
 
-    static HomePage HP;
-    static SearchHotels SH;
-    static SelectRoomPage SR;
-    static ConfirmBookingPage CB;
-    static ScreenshotUtility SC;
+     HomePage HP;
+     SearchHotels SH;
+     SelectRoomPage SR;
+     ConfirmBookingPage CB;
+     ScreenshotUtility SC;
+
 
     public ConfirmBookingPageTest() throws IOException {
     }
     @BeforeMethod
-    public static void bookingbrowser() throws InterruptedException, IOException {
+    public  void bookingbrowser() throws InterruptedException, IOException {
         HP = new HomePage();
         SH = new SearchHotels();
         SR = new SelectRoomPage();

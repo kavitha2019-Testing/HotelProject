@@ -72,7 +72,10 @@ public class HomePageTest  extends OpenBrowser {
             next.click();
             Thread.sleep(2000);
             INmonth = HP.Indatesel();
-        }
+        }//
+
+
+
         List<WebElement> e =  HP.selectIndate();
         for (WebElement num : e) {
             if (num.getText().contains(prop.getProperty("CheckInDate"))) {
@@ -108,21 +111,7 @@ public class HomePageTest  extends OpenBrowser {
         // SI.wholeimage(driver,"wholepic"); using selenium4
         Thread.sleep(2000);
         System.out.println("Entered Adult num section");
-        WebElement adultno = HP.adultnosel();
-        adultno.click();
-        Thread.sleep(2000);
-        //String num = prop.getProperty("AdultNo");
-        //int n = Integer.parseInt(num);
-        for (int i = 2; i <= 20; i++) {
-            if (i == 3) {
-                System.out.println("Adult number selected:" + i);
-                break;
-            } else {
-                WebElement button = HP.clickadultno();
-                Thread.sleep(2000);
-                button.click();
-                Thread.sleep(2000); }
-        }
+        AdultnumSel();
         //  SI.Image4(adultno,"adultNoimgae");
         System.out.println("child number selected");
         WebElement childno = HP.choldnosel();
@@ -157,6 +146,46 @@ public class HomePageTest  extends OpenBrowser {
                 Thread.sleep(2000);
 
             }
+        }
+    }
+
+    private void AdultnumSel() throws InterruptedException {
+        WebElement adultno = HP.adultnosel();
+        adultno.click();
+        Thread.sleep(2000);
+        //String num = prop.getProperty("AdultNo");
+        //int n = Integer.parseInt(num);
+        for (int i = 2; i <= 20; i++) {
+            if (i == 3) {
+                System.out.println("Adult number selected:" + i);
+                break;
+            } else {
+                WebElement button = HP.clickadultno();
+                Thread.sleep(2000);
+                button.click();
+                Thread.sleep(2000); }
+        }
+    }
+
+    private void outdatesel() throws InterruptedException {
+        String OutMonth = HP.Outdatesel().trim();
+        WebElement next1;
+        while ((!OutMonth.contains(prop.getProperty("CheckOutM")))) {
+            Thread.sleep(2000);
+           // next1 = driver.findElement(By.xpath("//div[@class='next-month']"));
+            next1 = HP.Indateclick();
+            next1.click();
+            Thread.sleep(2000);
+            OutMonth = HP.Outdatesel().trim();
+        }
+        List<WebElement> e1 = HP.selectIndate();
+        for (WebElement num1 : e1) {
+            if (num1.getText().contains(prop.getProperty("CheckOutDate"))) {
+                Thread.sleep(2000);
+                num1.click();
+                Thread.sleep(2000);
+                // System.out.println("checkout date is:" + num1.getText());
+                break; }
         }
     }
 }

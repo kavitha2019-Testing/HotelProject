@@ -6,6 +6,24 @@
   </listeners>
   <test thread-count="5" name="C:/Users/kavitha/IdeaProjects/HotelProject(failed)">
     <classes>
+      <class name="Com.TestPackage.ConfirmBookingPageTest">
+        <methods>
+          <include name="bookingbrowser"/>
+          <include name="bookingPage"/>
+        </methods>
+      </class> <!-- Com.TestPackage.ConfirmBookingPageTest -->
+      <class name="Com.TestPackage.PaymentPageTest">
+        <methods>
+          <include name="paymentbrowser"/>
+          <include name="paymentTest"/>
+        </methods>
+      </class> <!-- Com.TestPackage.PaymentPageTest -->
+      <class name="Com.TestPackage.SelectRoomPageTest">
+        <methods>
+          <include name="selectRoom"/>
+          <include name="Sbrowser"/>
+        </methods>
+      </class> <!-- Com.TestPackage.SelectRoomPageTest -->
       <class name="Com.TestPackage.HomePageTest">
         <methods>
           <include name="Lbrowser"/>
